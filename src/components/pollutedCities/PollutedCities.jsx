@@ -4,6 +4,7 @@ class PollutedCities extends React.Component {
 
 
     state = {
+        apiUrl: 'https://api.openaq.org/v1/measurements?country=',
         cities: [],
         fetchOptions: {
             method: 'GET',
@@ -14,7 +15,7 @@ class PollutedCities extends React.Component {
     componentDidUpdate = (prevProps)=> {
         const { fetchOptions } = this.state;
         if (this.props.currentCountryID !== prevProps.currentCountryID){
-        const  cityAPI=`https://api.openaq.org/v1/measurements?country=${this.props.currentCountryID}&order_by=value&sort=desc`;
+        const  cityAPI=`${this.state.apiUrl}${this.props.currentCountryID}&order_by=value&sort=desc`;
         fetch(cityAPI, fetchOptions )
           .then(response => {
             if (response.status === 200){
@@ -25,15 +26,16 @@ class PollutedCities extends React.Component {
           .then(response => response.json())
           .then(cities => {
             this.setState({cities});
-            this.props.currentCitiesList(cities)
+            this.props.currentCitiesList(cities);
           });
-        }}
+        }
+      }
 
 
         render(){
-            return(
+            return (
                 <React.Fragment></React.Fragment>
-            )
+            );
         }
 
 }

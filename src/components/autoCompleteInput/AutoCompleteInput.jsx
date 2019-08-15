@@ -10,22 +10,21 @@ class AutoCompleteInput extends React.Component {
         {id: 'DE', label: 'Germany'},
         {id: 'ES', label: 'Spain' },
         {id: 'FR', label: 'France' }
-        ],
+        ]
     }
 
     handleOnChange = e => {
-      this.setState({ value: e.target.value})
-     
+      this.setState({ value: e.target.value});
     }
 
     handleSelect = (value) =>{
-      this.setState({ value })
+      this.setState({ value });
       const index = this.state.cities.find(item => item.label === value);
       this.props.handleCountryName(index.label, index.id);
     }
 
     render(){
-        return( <ReactAutocomplete
+        return ( <ReactAutocomplete
             items={this.state.cities}
             shouldItemRender={(item, value) => item.label.toLowerCase().indexOf(value.toLowerCase()) > -1}
             getItemValue={item => item.label}

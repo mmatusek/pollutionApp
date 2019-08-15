@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-class wikiMediaCityDescription extends React.Component {
+class WikiMediaCityDescription extends React.Component {
 
     state = {
       api:'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1',
@@ -51,4 +52,8 @@ class wikiMediaCityDescription extends React.Component {
 
 }
 
-export default wikiMediaCityDescription;
+WikiMediaCityDescription.propTypes = {
+  cityName: PropTypes.string
+};
+
+export default WikiMediaCityDescription;

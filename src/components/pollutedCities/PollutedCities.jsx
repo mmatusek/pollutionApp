@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class PollutedCities extends React.Component {
 
@@ -39,5 +40,9 @@ class PollutedCities extends React.Component {
         }
 
 }
+
+PollutedCities.propTypes = {
+  currentCountryID: PropTypes.string.isRequired
+};
 
 export default PollutedCities;

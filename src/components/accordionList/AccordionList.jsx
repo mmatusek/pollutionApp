@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Accordion, Icon } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 
 import WikiMediaCityDescription from '../wikiMediaCityDescription/WikiMediaCityDescription.jsx';
 
@@ -16,7 +17,7 @@ import WikiMediaCityDescription from '../wikiMediaCityDescription/WikiMediaCityD
   render() {
 
    const listItem =this.props.citiesToDisplay.map((item,i) =>(
-    <React.Fragment>
+    <React.Fragment key={i}>
      <Accordion.Title active={this.state.activeIndex === i} index={i} onClick={this.handleClick}>
       <Icon name='dropdown' />
       {item}
@@ -33,5 +34,9 @@ import WikiMediaCityDescription from '../wikiMediaCityDescription/WikiMediaCityD
     );
   }
 }
+
+AccordionList.propTypes = {
+  citiesToDisplay: PropTypes.array.isRequired
+};
 
 export default AccordionList;

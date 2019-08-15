@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import ReactAutocomplete from 'react-autocomplete';
 
 class AutoCompleteInput extends React.Component {
@@ -42,5 +44,9 @@ class AutoCompleteInput extends React.Component {
           />);
     }
 }
+
+AutoCompleteInput.propTypes = {
+  handleCountryName: PropTypes.func
+};
 
 export default AutoCompleteInput;

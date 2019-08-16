@@ -11,8 +11,7 @@ class AutoCompleteInput extends React.Component {
         {id: 'DE', label: 'Germany'},
         {id: 'ES', label: 'Spain' },
         {id: 'FR', label: 'France' }
-        ],
-        value:''
+        ]
     }
 
     handleOnChange = (event,value) => {
@@ -33,7 +32,14 @@ class AutoCompleteInput extends React.Component {
         <ReactAutocomplete
             className='searchInput'
             items={this.state.cities}
-            shouldItemRender={(item, value) => item.label.toLowerCase().indexOf(value.toLowerCase()) > -1}
+            shouldItemRender={(item, value) =>  {
+              if (!!value && typeof value === 'string'){
+                return item.label.toLowerCase().indexOf(value.toLowerCase()) > -1;
+               } else {
+                  return value;
+               }
+              }
+            }
             getItemValue={item => item.label}
             renderItem={(item, highlighted) =>
               <div

@@ -17,6 +17,13 @@ class App extends React.Component {
       country: countryName,
       id
     });
+
+    if (countryName === '' & id===''){
+      this.setState({
+        country:'Poland',
+        id: 'PL'
+      });
+    }
   }
 
   citiesList= (cities) => {

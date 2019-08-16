@@ -37,6 +37,7 @@ body{
     box-sizing: border-box;
     border: none;
     border-bottom: 2px solid rgb(10, 91, 142);
+    border-top: 1px solid grey;
   }
 
   section p{

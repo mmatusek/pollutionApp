@@ -9,15 +9,15 @@ body{
   }
   
   .head {
-    padding: 175px;
+    padding: 15%;
     margin: 0;
     position: relative;
     overflow: hidden;
-    height: 150px;
     color: white;
     background-image:  linear-gradient(to right,   #74ebd5,  #acb6e5 );
     letter-spacing: 10px;
     font-size: 40px;
+    height: 10em;
   }
   
   section{
@@ -32,11 +32,20 @@ body{
 
   section div input{
     width: 100%;
-    padding: 12px 20px;
+    padding: 8px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid rgb(10, 91, 142);
+  }
+
+  section p{
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+    margin: 0 2%;
+    text-align: justify;
+    padding: 0;
   }
 
   .title{
@@ -57,3 +66,4 @@ body{
     margin-top: 50px;
     letter-spacing: 5px;
   }
+

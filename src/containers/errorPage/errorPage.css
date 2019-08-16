@@ -10,3 +10,7 @@
     font-size: 200%;
     font-weight: 600;
 }
+
+.errorPage p{
+    text-align: center;
+}

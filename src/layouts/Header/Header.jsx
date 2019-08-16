@@ -4,7 +4,8 @@ import '../../App.css';
 const Header = () => {
     return (
         <div className="head">
-            Martyna Matusek
+            <div>10 most polluted cities</div>
+            <div>Martyna Matusek</div>
     </div>);
 };
 

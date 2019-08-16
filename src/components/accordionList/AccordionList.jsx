@@ -15,7 +15,7 @@ import WikiMediaCityDescription from '../wikiMediaCityDescription/WikiMediaCityD
   }
 
   render() {
-
+    if (this.props.citiesToDisplay!== null){
    const listItem =this.props.citiesToDisplay.map((item,i) =>(
     <React.Fragment key={i}>
      <Accordion.Title active={this.state.activeIndex === i} index={i} onClick={this.handleClick}>
@@ -33,6 +33,10 @@ import WikiMediaCityDescription from '../wikiMediaCityDescription/WikiMediaCityD
       </Accordion>
     );
   }
+  else{
+    return <div></div>
+  }
+}
 }
 
 AccordionList.propTypes = {

@@ -1,0 +1,15 @@
+.startPage div{
+    display: inline-block;
+    margin: 0 5%;
+    padding: 2%;
+}
+
+.startPage p{
+    font-size: 30px;
+    padding: 3%;
+}
+
+div.startPage{
+    border-bottom: 2px solid grey ;
+}
+

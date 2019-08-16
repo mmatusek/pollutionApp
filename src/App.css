@@ -1,0 +1,49 @@
+
+  section {
+    flex-grow:1;
+  }
+  
+  main{
+    flex-grow: 1;
+    min-height: 500px;
+  }
+  
+  .head {
+    padding: 75px;
+    position: relative;
+    overflow: hidden;
+    height: 150px;
+    background-color: rgb(177, 174, 174);
+    color: white;
+    /* text-align: center; */
+    letter-spacing: 10px;
+  }
+  
+  section{
+    padding-bottom: 25px;
+    width: 70%;
+    margin: 0 15%;
+    text-align: left;
+  }
+
+  section input{
+    width: 70%;
+  }
+
+  .title{
+    text-align: left;
+  }
+
+  .content{
+    text-align: justify;
+  }
+
+  footer{
+    position: static;
+    width: 100%;
+    background-color: rgb(177, 174, 174);
+    color: white;
+    text-align: center;
+    height: 30px;
+    margin-top: 50px;
+  }

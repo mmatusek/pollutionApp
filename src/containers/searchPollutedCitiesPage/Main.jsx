@@ -1,8 +1,8 @@
 import React from 'react';
 
-import AutoCompleteInput from '../components/autoCompleteInput/AutoCompleteInput.jsx';
-import PollutedCities from '../components/pollutedCities/PollutedCities.jsx';
-import AccordionList from '../components/accordionList/AccordionList.jsx';
+import AutoCompleteInput from '../../components/autoCompleteInput/AutoCompleteInput.jsx';
+import PollutedCities from '../../components/pollutedCities/PollutedCities.jsx';
+import AccordionList from '../../components/accordionList/AccordionList.jsx';
 import './Main.css';
 
 class App extends React.Component {
@@ -29,17 +29,19 @@ class App extends React.Component {
         }
       }
     });
+    localStorage.setItem('currentCities', JSON.stringify(result.slice(0,10)));
     this.setState({
       currentCities: result.slice(0,10)
     });
   }
 
   render(){
+  const currentCities = JSON.parse(localStorage.getItem('currentCities'));
   return (
   <React.Fragment>
    <AutoCompleteInput handleCountryName={this.countryName}/>
    <PollutedCities currentCountryID={this.state.id} currentCitiesList={this.citiesList}/>
-   <AccordionList citiesToDisplay={this.state.currentCities}/>
+   <AccordionList citiesToDisplay={currentCities}/>
   </React.Fragment>
   );
 }

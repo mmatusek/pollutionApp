@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  nav {
+    background-color: white;
+    align-content: center;
+  }
+  
+  ul{
+    display: flex;
+    list-style-type: none;
+    width: 70%;
+    margin: 0 15%;
+    background-color: white;
+  }
+  
+  li{
+    flex-grow: 1;
+  }
+  
+   a {
+    display: block;
+    padding: 15px 25px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: arial;
+    background-color: white;
+  }
+  
+  /* a:hover{
+    color: black;
+    transform: translateY(10px)
+  } */
+
+    a:hover{
+        color: black;
+    }
+
+    a:focus{
+    background-color: rgb(172, 170, 170);
+    margin: 1px;
+    color: white;
+    }
+  
+    
+
+  section{
+    padding-top: 30px;
+    text-align: center;
+  }
+
+  .navPage{
+     background-color: rgb(177, 174, 174);
+  }
+ 

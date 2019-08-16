@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 class PollutedCities extends React.Component {
 
-
     state = {
         apiUrl: 'https://api.openaq.org/v1/measurements?country=',
         cities: [],
@@ -12,7 +11,6 @@ class PollutedCities extends React.Component {
             headers: {'Content-Type': 'application/json'}
           }
     }
-
     componentDidUpdate = (prevProps)=> {
         const { fetchOptions } = this.state;
         if (this.props.currentCountryID !== prevProps.currentCountryID){
@@ -32,7 +30,6 @@ class PollutedCities extends React.Component {
         }
       }
 
-
         render(){
             return (
                 <React.Fragment></React.Fragment>
@@ -42,7 +39,8 @@ class PollutedCities extends React.Component {
 }
 
 PollutedCities.propTypes = {
-  currentCountryID: PropTypes.string.isRequired
+  currentCitiesList: PropTypes.string.isRequired,
+  currentCountryID: PropTypes.string
 };
 
 export default PollutedCities;

@@ -29,6 +29,7 @@ class AutoCompleteInput extends React.Component {
     render(){
       const val = JSON.parse(localStorage.getItem('val'));
         return ( <ReactAutocomplete
+            className='searchInput'
             items={this.state.cities}
             shouldItemRender={(item, value) => item.label.toLowerCase().indexOf(value.toLowerCase()) > -1}
             getItemValue={item => item.label}
@@ -40,10 +41,10 @@ class AutoCompleteInput extends React.Component {
                 {item.label}
               </div>
             }
-            // value={this.state.value}
             value={val}
             onChange={this.handleOnChange}
             onSelect={this.handleSelect}
+            wrapperStyle={{'margin':'5px 0'}}
           />);
     }
 }

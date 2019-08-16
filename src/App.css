@@ -1,7 +1,7 @@
 
-  section {
-    flex-grow:1;
-  }
+body{
+  text-align: center;
+}
   
   main{
     flex-grow: 1;
@@ -9,25 +9,34 @@
   }
   
   .head {
-    padding: 75px;
+    padding: 175px;
+    margin: 0;
     position: relative;
     overflow: hidden;
     height: 150px;
-    background-color: rgb(177, 174, 174);
     color: white;
-    /* text-align: center; */
+    background-image:  linear-gradient(to right,   #74ebd5,  #acb6e5 );
     letter-spacing: 10px;
+    font-size: 40px;
   }
   
   section{
+    flex-grow: 1;
     padding-bottom: 25px;
     width: 70%;
     margin: 0 15%;
     text-align: left;
+    min-height: 600px;
+    background-color: white;
   }
 
-  section input{
-    width: 70%;
+  section div input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid red;
   }
 
   .title{
@@ -41,9 +50,10 @@
   footer{
     position: static;
     width: 100%;
-    background-color: rgb(177, 174, 174);
+    background-color: rgb(206, 202, 202);
     color: white;
     text-align: center;
     height: 30px;
     margin-top: 50px;
+    letter-spacing: 5px;
   }

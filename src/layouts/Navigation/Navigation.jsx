@@ -7,8 +7,8 @@ const Navigation = () => {
         return (
         <nav className = "navPage" >
             <ul >
-                <li > < NavLink to = "/" exact activeClassName = "home" > HOME </NavLink></li >
-                <li > < NavLink to = "/findCities" activeClassName = "findCities" > FIND CITIES </NavLink></li >
+                <li > < NavLink to = "/" exact  > HOME </NavLink></li >
+                <li > < NavLink to = "/findCities"  > FIND CITIES </NavLink></li >
             </ul>
         </nav>);
         };

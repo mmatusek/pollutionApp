@@ -39,7 +39,7 @@ class PollutedCities extends React.Component {
 }
 
 PollutedCities.propTypes = {
-  currentCitiesList: PropTypes.string.isRequired,
+  currentCitiesList: PropTypes.func,
   currentCountryID: PropTypes.string
 };
 

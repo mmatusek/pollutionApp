@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import './App.css';
-import Footer from './bodyComponents/Footer/Footer.jsx';
-import Header from './bodyComponents/Header/Header.jsx';
-import Page from './containers/Page.jsx';
-import Navigation from './bodyComponents/Navigation/Navigation.jsx';
+import Footer from './layouts/Footer/Footer.jsx';
+import Header from './layouts/Header/Header.jsx';
+import Page from './containers/page/Page.jsx';
+import Navigation from './layouts/Navigation/Navigation.jsx';
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
+        <div className='App'>
           <header>
             {<Header />}
           </header>
@@ -23,7 +23,7 @@ class App extends Component {
               {<Page/>}
             </section>
           </main>
-          <footer className="footer">
+          <footer className='footer'>
             {<Footer />}
           </footer>
         </div>

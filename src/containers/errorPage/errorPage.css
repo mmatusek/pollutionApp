@@ -1,0 +1,16 @@
+.errorPage p:nth-child(1){
+    font-size: 600%;
+}
+
+.errorPage p:nth-child(2){
+    font-size: 400%;
+}
+
+.errorPage p:nth-child(3){
+    font-size: 200%;
+    font-weight: 600;
+}
+
+.errorPage p{
+    text-align: center;
+}

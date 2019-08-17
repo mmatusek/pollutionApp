@@ -24,25 +24,33 @@ const preventions = [
 const StartPage = () => {
 
     /**
-   *  Function for creating single divBox
-   *  @param {object} name - the name of object
-   */
-    const divBoxMethod= (name) =>{
-    const divBox=name.map((item,i) => (
-        <div key={i}>
-            <img src={item.src} alt={item.alt}></img>
-            <h3>{item.description}</h3>
+    *  Function for creating single divBox
+    *  @param {object} name - the name of object
+    */
+    const divBoxMethod= (name) => {
+        const divBox = name.map((item,i) => (
+            <div key={i}>
+                <img src={item.src} alt={item.alt}></img>
+                <h3>{item.description}</h3>
+            </div>
+        ));
+
+        return divBox;
+    };
+
+    return (
+        <div className="mainDiv">
+            <div className='startPage'><p>Reasons of pollution</p>
+                {divBoxMethod(reasons)}
+            </div>
+            <div className='startPage'><p>Effects of pollution</p>
+                {divBoxMethod(effects)}
+            </div>
+            <div className='startPage'><p>Prevention</p>
+                {divBoxMethod(preventions)}
+            </div>
         </div>
-    ));
-    return divBox;
+    );
 };
-return ( <div className="mainDiv">
-        <div className='startPage'><p>Reasons of pollution</p>
-        {divBoxMethod(reasons)}</div>
-        <div className='startPage'><p>Effects of pollution</p>
-        {divBoxMethod(effects)}</div>
-        <div className='startPage'><p>Prevention</p>
-        {divBoxMethod(preventions)}</div>
-    </div> );
-};
+
 export default StartPage;

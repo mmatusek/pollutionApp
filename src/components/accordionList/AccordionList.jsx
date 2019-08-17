@@ -5,35 +5,54 @@ import PropTypes from 'prop-types';
 import WikiMediaCityDescription from '../wikiMediaCityDescription/WikiMediaCityDescription.jsx';
 
  class AccordionList extends Component {
-  state = { activeIndex: 0}
-    handleClick = (e, titleProps) => {
+
+  state = { 
+    activeIndex: 0
+  }
+
+  handleClick = (_e, titleProps) => {
     const { index } = titleProps;
     const { activeIndex } = this.state;
     const newIndex = activeIndex === index ? -1 : index;
+
     this.setState({ activeIndex: newIndex });
   }
 
+  createListItem = () => {
+    const { citiesToDisplay } = this.props;
+    const { activeIndex } = this.state;
+
+    const listItem = citiesToDisplay.map((item, i) => (
+      <React.Fragment key={i}>
+        <Accordion.Title
+          active={activeIndex === i}
+          index={i}
+          onClick={this.handleClick}
+        >
+          <Icon name='dropdown'/>
+          {item}
+        </Accordion.Title>
+        <Accordion.Content
+          active={this.state.activeIndex === i}
+        >
+          <WikiMediaCityDescription cityName={item}/>
+        </Accordion.Content>
+      </React.Fragment>
+    ));
+
+    return listItem;
+  }
+
   render() {
-    if (this.props.citiesToDisplay!== null){
-      const listItem =this.props.citiesToDisplay.map((item,i) =>(
-    <React.Fragment key={i}>
-     <Accordion.Title active={this.state.activeIndex === i} index={i} onClick={this.handleClick}>
-      <Icon name='dropdown' />
-      {item}
-    </Accordion.Title>
-    <Accordion.Content active={this.state.activeIndex === i}>
-        <WikiMediaCityDescription cityName={item}/>
-    </Accordion.Content>
-    </React.Fragment>));
+    const { citiesToDisplay } = this.props;
 
     return (
-      <Accordion fluid styled>
-        {listItem}
-      </Accordion>
+      citiesToDisplay
+        ? <Accordion fluid styled>
+            {this.createListItem()}
+          </Accordion>
+        : <div></div>
     );
-  } else {
-    return <div></div>;
-    }
   }
 }
 

@@ -6,8 +6,7 @@ import WikiMediaCityDescription from '../wikiMediaCityDescription/WikiMediaCityD
 
  class AccordionList extends Component {
   state = { activeIndex: 0}
-
-  handleClick = (e, titleProps) => {
+    handleClick = (e, titleProps) => {
     const { index } = titleProps;
     const { activeIndex } = this.state;
     const newIndex = activeIndex === index ? -1 : index;
@@ -15,8 +14,8 @@ import WikiMediaCityDescription from '../wikiMediaCityDescription/WikiMediaCityD
   }
 
   render() {
-    if (this.props.citiesToDisplay!== null){  
-   const listItem =this.props.citiesToDisplay.map((item,i) =>(
+    if (this.props.citiesToDisplay!== null){
+      const listItem =this.props.citiesToDisplay.map((item,i) =>(
     <React.Fragment key={i}>
      <Accordion.Title active={this.state.activeIndex === i} index={i} onClick={this.handleClick}>
       <Icon name='dropdown' />
@@ -32,11 +31,10 @@ import WikiMediaCityDescription from '../wikiMediaCityDescription/WikiMediaCityD
         {listItem}
       </Accordion>
     );
-    }
-  else {
+  } else {
     return <div></div>;
+    }
   }
-}
 }
 
 AccordionList.propTypes = {

@@ -23,6 +23,10 @@ const preventions = [
 
 const StartPage = () => {
 
+    /**
+   *  Function for creating single divBox
+   *  @param {object} name - the name of object
+   */
     const divBoxMethod= (name) =>{
     const divBox=name.map((item,i) => (
         <div key={i}>

@@ -11,9 +11,15 @@ class PollutedCities extends React.Component {
             headers: {'Content-Type': 'application/json'}
           }
     }
-    componentDidUpdate = (prevProps)=> {
+
+    componentDidUpdate = (prevProps) => {
+      if (this.props.currentCountryID !== prevProps.currentCountryID) {this.fetchDataApi();}
+      }
+        /**
+        *  Function for fetching data from API https://docs.openaq.org/
+        */
+    fetchDataApi = ()=> {
         const { fetchOptions } = this.state;
-        if (this.props.currentCountryID !== prevProps.currentCountryID){
         const  cityAPI=`${this.state.apiUrl}${this.props.currentCountryID}&order_by=value&sort=desc`;
         fetch(cityAPI, fetchOptions )
           .then(response => {
@@ -28,8 +34,6 @@ class PollutedCities extends React.Component {
             this.props.currentCitiesList(cities);
           });
         }
-      }
-
         render(){
             return (
                 <React.Fragment></React.Fragment>

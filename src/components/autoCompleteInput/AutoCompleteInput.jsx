@@ -13,11 +13,19 @@ class AutoCompleteInput extends React.Component {
         {id: 'FR', label: 'France' }
         ]
     }
-
+   /**
+   *  Function for handling onChange action
+   *  @param {string} value - current written value
+   * @param {object} event -  event
+   */
     handleOnChange = (event,value) => {
       localStorage.setItem('val', JSON.stringify(value));
       this.setState({ value: event.target.value});
     }
+   /**
+   *  Function for handling onSelect action
+   *  @param {string} value -  value selected from input
+   */
     handleSelect = (value) =>{
       this.setState({ value });
       const index = this.state.cities.find(item => item.label === value);
@@ -28,7 +36,7 @@ class AutoCompleteInput extends React.Component {
     render(){
       const val = JSON.parse(localStorage.getItem('val'));
         return ( <React.Fragment>
-        <p>Country</p>
+        <p>Search country</p>
         <ReactAutocomplete
             className='searchInput'
             items={this.state.cities}

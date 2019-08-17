@@ -26,7 +26,7 @@ body{
     width: 70%;
     margin: 0 15%;
     text-align: left;
-    min-height: 600px;
+    min-height: 500px;
     background-color: white;
   }
 
@@ -36,8 +36,8 @@ body{
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
+    border: 1px solid rgb(191, 191, 193);
     border-bottom: 2px solid rgb(10, 91, 142);
-    border-top: 1px solid grey;
   }
 
   section p{

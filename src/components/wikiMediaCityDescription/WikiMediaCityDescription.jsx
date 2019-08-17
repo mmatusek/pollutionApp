@@ -19,11 +19,14 @@ class WikiMediaCityDescription extends React.Component {
         componentDidUpdate = (prevProps) => {
         if (this.props.cityName !== prevProps.cityName) {this.fetchDataApi();}
         }
-
+        /**
+        *  Function for fetching data from API https://www.mediawiki.org/wiki/API:Query
+        */
         fetchDataApi = () =>{
+          const cityName=this.props.cityName.split('/');
           const { fetchOptions} = this.state;
           const proxyurl = 'https://cors-anywhere.herokuapp.com/';
-          const url = `${this.state.api}&titles=${this.props.cityName}`;
+          const url = `${this.state.api}&titles=${cityName.length>1 ? cityName[1]: cityName[0]}`;
           fetch(proxyurl + url, fetchOptions)
           .then(response => {
               if (response.status === 200){
@@ -36,20 +39,13 @@ class WikiMediaCityDescription extends React.Component {
             this.setState({description: data.query.pages});
           });
         }
-
-        descriptionBox = () =>{
+        render(){
           const descriptionValues = Object.values(this.state.description);
           const newDesp = descriptionValues[0];
           if (newDesp=== undefined) {
             return <p></p>;
           } else { return <p>{newDesp.extract}</p>;}
         }
-         render(){
-          return (
-           <React.Fragment>{this.descriptionBox()}</React.Fragment>
-            );
-        }
-
 }
 
 WikiMediaCityDescription.propTypes = {

@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import Footer from './layouts/Footer/Footer.jsx';
 import Header from './layouts/Header/Header.jsx';
-import Page from './containers/Page.jsx';
+import Page from './containers/page/Page.jsx';
 import Navigation from './layouts/Navigation/Navigation.jsx';
 
 class App extends Component {
